@@ -1,0 +1,390 @@
+/*
+------------------------------------------------------------
+    Peak for Drupal 7.x - Version 1.1                           
+    Copyright (C) 2012 esors.com All Rights Reserved.           
+    @license - Copyrighted Commercial Software                   
+------------------------------------------------------------
+    Theme Name: Peak                                            
+    Author: ESORS                                           
+    Date: 25th July 2012                                        
+    Website: http://www.esors.com/                              
+------------------------------------------------------------
+    This file may not be redistributed in whole or   
+    significant part.                                            
+------------------------------------------------------------*/    
+
+
+/*  Style
+------------------------------------------------------------*/
+a, ul.pager li a.active, #footer a:hover, #closure a:hover, .node .meta i, .button input,
+.block ul.quicktabs-tabs li.active a, .block ul.quicktabs-tabs li:hover a {
+  color: #c63942;
+  text-decoration: none;
+}
+
+/*  Black
+------------------------------------------------------------*/
+/*  Body
+------------------------------*/
+body {
+  color: #666;
+  background-color: #222;
+}
+
+h1 a, h2 a, h3 a {
+  color: #666;
+}
+
+img.framed-thin {
+  border: 1px solid #ccc;
+}
+
+img.framed, .default-image.framed img {
+  background: #2d2d2d;
+}
+
+/*  Header
+------------------------------*/
+#header {
+  background: url("../images/black/bg_header.jpg") repeat-x left top;
+}
+
+/*  Main
+------------------------------*/
+#main-wrapper {
+  background: #222 url("../images/black/bg_header.jpg") repeat-x left -170px;
+}
+
+#main {
+  background: url("../images/black/bg_main.jpg") repeat-x left bottom;
+}
+
+#main-inner {
+  background: url("../images/black/bg_main_inner.jpg") no-repeat center -56px;
+}
+
+#main-border {
+  background: url("../images/black/bg_main_inner.jpg") no-repeat center top;
+}
+
+.two-sidebars #main-middle {
+  background: url("../images/black/bg_dot_v.png") repeat-y 660px top;
+}
+
+.sidebar-second #main-middle {
+  background: url("../images/black/bg_dot_v.png") repeat-y 640px top;
+}
+
+/*  nodes
+---------------*/
+.node .meta {
+  background-color: #2d2d2d;
+}
+
+.node .meta:hover {
+  background-color: #333;
+}
+
+/*  blog
+---------------*/
+.node.node-blog .day {
+  color: #fff;
+  background-color: #666;
+}
+
+.node.node-blog .month-year {
+  border: 1px solid #2d2d2d;
+  border-left: none;
+  background-color: #2d2d2d;
+}
+
+/*  comments 
+---------------*/
+#comments h3.title a {
+  color: #666;
+}
+
+#comments .comment .content {
+  border: 1px solid #333;
+  background-color: #2d2d2d;
+}
+
+#comments .comment .user-picture  {
+  border: 1px solid #333;
+  background-color: #2d2d2d;
+}
+
+#comments .comment .links {
+  background-color: #333;
+}
+
+#comments #comment-form {
+  background-color: #2d2d2d;
+}
+
+#comments .form-text, #comments .form-textarea {
+  color: #666;
+  border: 1px solid #333;
+  background-color: #222;
+}
+
+.resizable-textarea .grippie {
+  border-color: #333;
+  background-color: #2d2d2d;
+}
+
+#comments .captcha, #comments fieldset {
+  border: 1px solid #333;
+}
+
+/*  pager 
+---------------*/
+ul.pager li {
+  background-color: #2d2d2d;
+}
+
+ul.pager li:hover {
+  background-color: #333;
+}
+
+/*  breadcrumb
+---------------*/
+#search-breadcrumb {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+/*  Block 
+------------------------------*/
+/*  list 
+---------------*/
+.block ul li, .block ol li {
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.block li a:hover, .block li a.active {
+  color: #666;
+}
+
+/*  main blocks 
+---------------*/
+#main-top {
+  border-bottom: 1px solid #333;
+}
+
+#main-bottom .block {
+  border: 1px solid #333;
+}
+
+#main-bottom .block h2.title {
+  background-color: #222;
+}
+
+/*  sidebar blocks 
+---------------*/
+#sidebar-left .block {
+  border-left: 3px solid #666;
+}
+
+#sidebar-right .block {
+  border-bottom: 1px solid #222;
+  background: url("../images/black/bg_dot_h.png") repeat-x left bottom;
+}
+
+#sidebar-right .block-inner {
+  border: 1px solid #2d2d2d;
+  background-color: #2d2d2d;
+}
+
+/*  footer & closure 
+---------------*/
+#footer {
+  border-bottom: 1px solid #111;
+  background: url("../images/black/bg_header.jpg") repeat-x left -80px;
+}
+
+#footer h2, #footer a, #closure a {
+  color: #666;
+}
+
+#closure {
+  border: 1px solid #333;
+  border-bottom: none;
+}
+
+/*  Latest Post 
+------------------------------*/
+.latest-news ul {
+  border-top: 1px solid #2d2d2d;
+}
+
+.latest-news h3 {
+  border-left: 1px dotted #444;
+}
+
+/*  Quick Tab 
+------------------------------*/
+ul.quicktabs-tabs {
+  background-color: #666;
+}
+
+ul.quicktabs-tabs li {
+  background-color: #888;
+}
+
+ul.quicktabs-tabs li.active, ul.quicktabs-tabs li:hover {
+  background-color: #2d2d2d;
+}
+
+.block ul.quicktabs-tabs li a {
+  color: #ccc;
+}
+
+/*  Search
+------------------------------*/
+#search {
+  border-left: 1px dotted #444;
+}
+
+#search .form-text, .block-search .form-text {
+  border: 1px solid #333;
+  background-color: transparent;
+}
+
+/*  Login
+------------------------------*/
+#user-login-form .form-text {
+  border: 1px solid #2d2d2d;
+  background-color: transparent;
+}
+
+/*  Button
+------------------------------*/
+.button input, .read-more-alter a {
+  background-color: #111;
+}
+
+.button input:hover, .read-more-alter a:hover {
+  background-color: #333;
+}
+
+/*  Primary Menu
+------------------------------*/
+#primary ul.menu ul {
+  border: 1px solid #000;
+  border-top: none;
+  background-color: #2d2d2d;
+}
+
+#primary ul.menu ul li.first {
+  border-top: 1px solid #333;
+}
+
+#primary ul.menu ul li a, #primary ul.menu ul li.expanded a {
+  color: #666;
+  background-color: #333;
+}
+
+/*  Red
+------------------------------------------------------------*/
+/*  Showcase 
+------------------------------*/
+#showcase .kwicks li .read-more a {
+  background-color: #c63942;
+}
+
+#showcase .kwicks li .read-more a:hover {
+  color: #c63942;
+  background-color: #666 !important;
+}
+
+/*  pager
+---------------*/
+#showcase div.nivo-controlNav a {
+  background: transparent url("../images/black/red/bg_pager.png") repeat-y left top;
+}
+
+#showcase .nivo-caption p .read-more a {
+  background: #c63942 url("../images/black/red/bg_pager.png") no-repeat center -57px;
+}
+
+/*  Main
+------------------------------*/
+/*  blog
+---------------*/
+.node.node-blog .meta .read-more a {
+  background: url("../images/black/red/bg_arrow.png") no-repeat right 1px;
+}
+
+/*  Latest Post 
+------------------------------*/
+.latest-news .date {
+  color: #c63942;
+  background-color: #2d2d2d;
+}
+
+.latest-news h3 a {
+  background: url("../images/black/red/bg_arrow.png") no-repeat right top;
+}
+
+.latest-news h3 a:hover, .latest-news h3 a.selected {
+  color: #c63942;
+  background: url("../images/black/red/bg_arrow.png") no-repeat right bottom;
+}
+
+/*  Primary Menu
+------------------------------*/
+/*  first level
+---------------*/
+#primary ul li a {
+  color: #888;
+  background: url("../images/black/red/bg_menu.png") no-repeat right -70px;
+}
+
+#primary ul li a:hover, #primary ul li a.active, #primary ul li.sfHover a {
+  color: #fff;
+  background: url("../images/black/red/bg_menu.png") repeat-x left top;
+}
+
+#primary ul li a:hover span, #primary ul li a.active span, #primary ul li.sfHover a span {
+  background: url("../images/black/red/bg_menu.png") no-repeat left -140px;
+}
+
+#primary ul li a:hover span span, #primary ul li a.active span span, #primary ul li.sfHover a span span {
+  background: url("../images/black/red/bg_menu.png") no-repeat right -210px;
+}
+
+/*  second level
+---------------*/
+#primary ul.menu ul li a:hover, #primary ul.menu ul li a.active {
+  color: #c63942 !important;
+  background-color: #383838;
+}
+
+/*  Typography
+------------------------------------------------------------*/
+h1.typo-border, h2.typo-border, h3.typo-border {
+  border-bottom: 1px solid #2d2d2d;
+}
+
+blockquote.typo-inset-left, blockquote.typo-inset-right {
+  border-bottom:1px solid #2d2d2d;
+  border-top:1px solid #2d2d2d;
+}
+
+pre.typo-code {
+  border-top: 5px solid #2d2d2d;
+  border-bottom: 5px solid #2d2d2d;
+}
+
+.typo-alert, .typo-announcement, .typo-check, .typo-comment, .typo-contact, .typo-favorite, .typo-stop, .typo-tip {
+  border: 1px solid #2d2d2d;
+}
+
+/*  CSS3
+------------------------------------------------------------*/
+img.framed, .default-image.framed img, #primary ul.menu ul {
+  -moz-box-shadow: 2px 2px 5px #111 !important;
+  -webkit-box-shadow: 2px 2px 5px #111 !important;
+  box-shadow: 2px 2px 5px #111 !important;
+}

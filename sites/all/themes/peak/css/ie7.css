@@ -1,0 +1,97 @@
+/*
+------------------------------------------------------------
+    Peak for Drupal 7.x - Version 1.1                           
+    Copyright (C) 2012 esors.com All Rights Reserved.           
+    @license - Copyrighted Commercial Software                   
+------------------------------------------------------------
+    Theme Name: Peak                                            
+    Author: ESORS                                           
+    Date: 25th July 2012                                        
+    Website: http://www.esors.com/                              
+------------------------------------------------------------
+    This file may not be redistributed in whole or   
+    significant part.                                            
+------------------------------------------------------------*/ 
+
+
+/*  Style
+------------------------------------------------------------*/
+/*  Body
+------------------------------*/
+img.left, .default-image.left img,
+img.right, .default-image.right img,
+.latest-news img {
+  margin-top: 20px;
+}
+
+/*  Showcase
+------------------------------*/
+#showcase {
+  margin-top: 25px;
+}
+
+#showcase .frame {
+  position: static;
+  width: 940px;
+  height: 0;
+  z-index: 0;
+}
+
+#showcase .kwicks li .description {
+  padding-top: 25px;
+}
+
+/*  Main
+------------------------------*/
+/*  comments 
+---------------*/
+/*  comment 
+-----*/
+#comments .comment .links {
+  width: 140px;
+  text-align: center;
+  padding: 2px 0;
+}
+
+
+/*  pager 
+---------------*/
+ul.pager li {
+  margin-right: 3px !important;
+}
+
+/*  caption 
+---------------*/
+#showcase .nivo-caption p {
+  position: static;
+}
+
+#showcase div.nivo-controlNav {
+  left: 20px;
+  width: 150px;
+}
+
+#showcase div.nivo-controlNav a {
+  float: left;
+  display: block;
+}
+
+#showcase .nivo-caption p .read-more a {
+  background-color: transparent !important;
+}
+
+/*  Menu
+------------------------------*/
+#primary ul li {
+  z-index: 90;
+}
+
+/*  Button
+------------------------------*/
+.button input {
+  overflow: visible;
+}
+
+.button input[class] {
+  width: auto;
+}
