@@ -1258,9 +1258,12 @@ ul.quicktabs-tabs li.first {
 
 /*  custom
 ---------------*/
-.region-content-bottom #block-views-filmes_em_cartaz-block {
+.region-content-bottom #block-quicktabs-front_right,
+.region-content-bottom #block-block-4 {
   width: 360px;
   overflow: hidden;
+  float: left;
+  margin-right: 20px;
 }
 
 .trailer-link a {
@@ -1289,4 +1292,31 @@ ul.quicktabs-tabs li.first {
 
 body.front .region-content {
   display: none;
+}
+
+.gallery-slides {
+  width: 300px !important;
+  height: 200px !important;
+}
+.gallery-thumbs {
+  width: 300px !important;
+}
+
+.galleryview {
+  float: left;
+}
+
+.item-list {
+  clear: both;
+}
+
+.item-list ul.shs-hierarchy {
+  list-style-type: none;
+  margin: 10px;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.shs-hierarchy li {
+  float: left;
 }
