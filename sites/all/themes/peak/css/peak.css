@@ -1294,12 +1294,20 @@ body.front .region-content {
   display: none;
 }
 
+.galleryview {
+  width: 425px;
+  margin-left: 20px;
+}
+
 .gallery-slides {
-  width: 300px !important;
+  width: 360px !important;
   height: 200px !important;
+  margin: 10px !important;
 }
 .gallery-thumbs {
-  width: 300px !important;
+  width: 373px !important;
+  margin: 10px !important;
+  left: -52px;
 }
 
 .galleryview {
@@ -1319,4 +1327,55 @@ body.front .region-content {
 
 .shs-hierarchy li {
   float: left;
+}
+
+.field-name-field-cupom {
+  clear: both;
+  position: relative;
+  float: left;
+  width: 425px;
+}
+.field-name-field-cupom .field-items {
+  position: relative;
+  height: 150px;
+  width: 500px;
+}
+
+.field-name-field-cupom .field-item {
+  position: absolute;
+}
+
+.field-name-field-cupom .cupom-tab {
+  display: inline;
+  background-color: rgb(185, 185, 185);
+  padding: 5px 10px;
+  font-weight: bold;
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+}
+
+.field-name-field-cupom .cupom-tab.active {
+  background-color: gray;
+  color: #d89308;
+}
+
+#node_anuncios_full_group_contato {
+  width: 325px;
+  float: left;
+  background-color: #c63942;
+  color: #fff !important;
+  padding: 5px;
+}
+
+#node_anuncios_full_group_contato .field-group-format-wrapper li {
+  border-bottom: 1px solid #fff;
+}
+
+#node_anuncios_full_group_contato .field-group-format-wrapper li a {
+  color: #fff;
+}
+
+#node_anuncios_full_group_contato .field-group-format-wrapper {
+
+  display: block !important;
 }

@@ -1,4 +1,7 @@
 name = Portal Siga
 description = Modulo customizado do portal siga
+package = Custom
 core = 7.x
+project = "porta_siga"
 
+scripts[] = js/functions.js
