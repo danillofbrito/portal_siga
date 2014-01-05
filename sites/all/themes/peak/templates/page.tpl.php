@@ -1,18 +1,18 @@
 <?php
 /*
 ------------------------------------------------------------
-    Peak for Drupal 7.x - Version 1.1                           
-    Copyright (C) 2012 esors.com All Rights Reserved.           
-    @license - Copyrighted Commercial Software                   
+    Peak for Drupal 7.x - Version 1.1
+    Copyright (C) 2012 esors.com All Rights Reserved.
+    @license - Copyrighted Commercial Software
 ------------------------------------------------------------
-    Theme Name: Peak                                            
-    Author: ESORS                                           
-    Date: 25th July 2012                                        
-    Website: http://www.esors.com/                              
+    Theme Name: Peak
+    Author: ESORS
+    Date: 25th July 2012
+    Website: http://www.esors.com/
 ------------------------------------------------------------
-    This file may not be redistributed in whole or   
-    significant part.                                            
-------------------------------------------------------------*/   
+    This file may not be redistributed in whole or
+    significant part.
+------------------------------------------------------------*/
 ?>
 
   <div id="page">
@@ -23,12 +23,12 @@
             <?php if ($logo): ?>
               <div id="site-logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/></a></div>
             <?php endif; ?>
-		    <?php if ($site_name): ?>  
+		    <?php if ($site_name): ?>
 		      <div id="site-name">
 		        <h1 class="cufon"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><?php print $site_name; ?></a></h1>
 		      </div>
 	        <?php endif; ?>
-		    <?php if ($site_slogan): ?>  
+		    <?php if ($site_slogan): ?>
 		      <div id="site-slogan"><?php print $site_slogan; ?></div>
 		    <?php endif; ?>
           </div> <!-- /#logo-title -->
@@ -52,9 +52,9 @@
         <?php endif; ?>
 	  </div>
     </div></div> <!-- /#header-inner, /#header -->
-    
+
     <div id="main-wrapper">
-	  <div id="main"><div id="main-inner" class="clearfix">        
+	  <div id="main"><div id="main-inner" class="clearfix">
 	    <?php if ($page['showcase']): ?>
           <div id="showcase">
             <?php print render($page['showcase']); ?>
@@ -67,7 +67,7 @@
             </div> <!-- /#search -->
           <?php endif; ?>
 	      <?php if ($breadcrumb && $breadcrumb != '<div class="breadcrumb"></div>'): print '<div id="breadcrumb">You are here: '.$breadcrumb.'</div>';
-	      else: print '<div id="breadcrumb">You are here: <a href="/">Home</a></div>'; 
+	      else: print '<div id="breadcrumb">You are here: <a href="/">Home</a></div>';
 	      endif; ?>
 		</div>
 	    <?php if ($page['main_top_one'] || $page['main_top_two'] || $page['main_top_three'] || $page['main_top_four']): ?>
@@ -92,7 +92,7 @@
                 <?php print render($page['main_top_four']); ?>
               </div><!-- /main-top-four -->
 		    <?php endif; ?>
-          </div></div> 
+          </div></div>
 	    <?php endif; ?>
 
 		<div id="main-middle" class="clearfix">
@@ -118,7 +118,7 @@
                         print "<h1 class=\"title cufon\">".$title."</h1>";
                       }
 		            }
-                  ?> 
+                  ?>
                   <?php print $messages; ?>
                   <?php if ($tabs): ?>
                     <div class="tabs"><?php print render($tabs); ?></div>
@@ -128,7 +128,7 @@
                     <ul class="action-links"><?php print render($action_links); ?></ul>
                   <?php endif; ?>
                 </div> <!-- /#content-header -->
-              <?php endif; ?> 
+              <?php endif; ?>
               <?php print render($page['content']); ?>
 			  <?php if (($title=='Preview comment')||($title=='Add new comment')): ?>
 			    </div></div>
@@ -174,13 +174,13 @@
               <div id="main-bottom-four" class="column">
                 <?php print render($page['main_bottom_four']); ?>
               </div><!-- /main-bottom-four -->
-            <?php endif; ?>	
-          </div></div> 
+            <?php endif; ?>
+          </div></div>
 	    <?php endif; ?>
 		<div id="main-border"></div>
       </div></div> <!-- /#main-inner, /#main -->
 	</div> <!-- /main-wrapper -->
-	
+
 	<div id="footer"><div id="footer-inner" class="footer-<?php print $footer; ?> clearfix">
 	  <?php if ($page['footer_one']): ?>
         <div id="footer-one" class="column">
@@ -202,8 +202,8 @@
           <?php print render($page['footer_four']); ?>
         </div><!-- /footer-four -->
       <?php endif; ?>
-	  <div id="closure"><div id="designed-by"><a href="http://www.esors.com" title="Drupal theme">Drupal Theme by ESORS</a></div><?php print render($page['footer']); ?></div>
+	  <div id="closure"><!--<div id="designed-by"><a href="http://www.esors.com" title="Drupal theme">Drupal Theme by ESORS</a></div>--><?php print render($page['footer']); ?></div>
     </div></div> <!-- /#footer-inner, /#footer -->
 
   </div> <!-- /#page -->
-  <!--[if IE]><script type="text/javascript"> Cufon.now(); </script><![endif]--> 
+  <!--[if IE]><script type="text/javascript"> Cufon.now(); </script><![endif]-->

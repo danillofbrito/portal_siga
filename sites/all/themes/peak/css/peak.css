@@ -231,7 +231,7 @@ img.framed, .default-image.framed img {
 }
 
 #site-logo img {
-  height: 70px;
+  height: 95px;
   border: none;
 }
 
@@ -1266,6 +1266,10 @@ ul.quicktabs-tabs li.first {
   margin-right: 20px;
 }
 
+.region-content-bottom #block-block-4 {
+  /*width: 390;*/
+}
+
 .trailer-link a {
   background-image: url(/sites/default/files/trailer.jpg);
   display: block;
@@ -1334,7 +1338,14 @@ body.front .region-content {
   position: relative;
   float: left;
   width: 425px;
+  height: 185px;
+  margin-bottom: 30px;
 }
+
+.field-name-field-cupom img:hover {
+  cursor: pointer;
+}
+
 .field-name-field-cupom .field-items {
   position: relative;
   height: 150px;
@@ -1360,11 +1371,14 @@ body.front .region-content {
 }
 
 #node_anuncios_full_group_contato {
-  width: 325px;
+  width: 315px;
+  border-radius: 10px;
   float: left;
   background-color: #c63942;
   color: #fff !important;
-  padding: 5px;
+  padding: 10px;
+  height: auto;
+  margin-top: -1px;
 }
 
 #node_anuncios_full_group_contato .field-group-format-wrapper li {
@@ -1376,6 +1390,120 @@ body.front .region-content {
 }
 
 #node_anuncios_full_group_contato .field-group-format-wrapper {
-
   display: block !important;
+}
+
+#node_anuncios_full_group_contato .item-list {
+  margin-top: -15px;
+  font-size: 10px;
+}
+
+#node_anuncios_full_group_contato .item-list .shs-hierarchy {
+  margin: 0;
+  padding: 0;
+}
+
+.shs-hierarchy li:after {
+  content: '';
+}
+
+.label-categoria {
+  font-weight: bold;
+}
+
+.service-links li {
+  list-style: none;
+  float: right;
+  margin-bottom: 28px;
+}
+
+.service-links li.service-links-twitter-widget {
+  margin-top: 2px;
+}
+
+.footer-link-list {
+  width: 100%;
+  text-align: center;
+}
+
+.footer-link-list h3 {
+  color: #d89308;
+}
+
+.footer-link-list p {
+  font-size: small;
+}
+
+.footer-link-list div.content div {
+  width: 25%;
+  float: left;
+}
+
+.colunista {
+  width: auto;
+  height: 50px;
+  padding: 10px;
+  padding-bottom: 15px;
+}
+
+.foto-colunista {
+  float: left;
+}
+
+.dados-colunista {
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 15px;
+  color: rgb(128, 128, 128);
+  line-height: 1.7;
+}
+
+.dados-colunista p {
+  margin: 0;
+}
+
+.profissao-colunista {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.nome-colunista,
+.email-colunista {
+  font-size: smaller;
+}
+
+.colunista-mid {
+  background-color: #dbdbdb;
+  text-align: left;
+}
+
+#content-bottom .block-inner {
+  background-color: #f5f5f5;
+}
+
+.jcarousel-prev,
+.jcarousel-next {
+  display: none !important;
+}
+
+.region-header-left .jcarousel-skin-default .jcarousel-container-horizontal {
+  padding-left: 0;
+}
+
+.view-an-ncios-destaque ul li {
+  background: none;
+}
+
+.region-content-top .block-nodeblock .node-banner-full .content {
+  position: relative;
+}
+
+.region-content-top .block-nodeblock .node-banner-full .content .field-name-field-anuncio {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.block-fb-likebox {
+  float: left;
 }

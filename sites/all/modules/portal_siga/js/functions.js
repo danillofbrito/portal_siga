@@ -5,7 +5,7 @@
       $(this).jqprint();
     });
 
-    if ($('body.node-type-anuncios').length > 0) {
+    if ($('body.node-type-anuncios.page-node-').length > 0) {
       var cupons = $('.field-name-field-cupom .field-item').size();
 
       if (cupons == 2) {
@@ -29,6 +29,11 @@
         });
       }
       $('.field-name-field-cupom .field-item').first().show();
+
+      $('ul.shs-hierarchy li.first').detach().insertAfter("ul.shs-hierarchy li.last");
+      $('ul.shs-hierarchy li.last').detach().insertBefore("ul.shs-hierarchy li:first");
+
+      $('.node-anuncios .content').prepend('<span class="label-categoria">Categorias: </span>');
 
     }
   });

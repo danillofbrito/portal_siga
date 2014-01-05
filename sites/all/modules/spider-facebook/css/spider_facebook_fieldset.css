@@ -1,0 +1,73 @@
+.hasTip {
+  border-style: solid;
+  border-width: 2px;
+}
+
+.hasTable {
+  border: none;
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+.hasTable * {
+  background-color: rgba(1, 1, 1, 0);
+  border: none;
+}
+
+#edit-add-posts-button,
+#edit-add-pages-button {
+  float: right;
+}
+
+.form-item-search-by-title,
+.form-item-search-posts-title,
+.form-item-search-posts-type {
+  display: inline;
+}
+
+.form-item-layout {
+  padding: 0;
+}
+
+#content,
+#note {
+  text-align:justify;
+  width:1100px;
+}
+
+#sliding_popup {
+  display:block;
+  left:0px;
+  margin:0px;
+  padding:0px;
+  position:fixed;
+  width:100%;
+}
+
+.spider_video_player_theme_fieldset {
+  float: left;
+  margin-right: 10px;
+	width: 255px;
+}
+
+#theme_video_control_parameters {
+  clear: both;
+  float: left;
+  margin-right: 10px;
+  width: 100%;
+}
+
+.form-item-centerBtnAlpha,
+#slider-centerBtnAlpha,
+.form-item-watermarkAlpha,
+#slider-watermarkAlpha,
+.form-item-framesBgAlpha,
+#slider-framesBgAlpha,
+.form-item-ctrlsMainAlpha,
+#slider-ctrlsMainAlpha,
+.form-item-defaultVol,
+#slider-defaultVol {
+  display: inline-block;
+  margin: 0 !important;
+  padding: 0 !important;
+}

@@ -13,6 +13,10 @@
     This file may not be redistributed in whole or
     significant part.
 ------------------------------------------------------------*/
+// echo "<pre>";
+// print_r($fields['view_node']);
+// die();
+
 ?>
 
 <span class="date"><i><?php print $fields['created']->content; ?></i></span>

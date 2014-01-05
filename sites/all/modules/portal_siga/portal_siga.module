@@ -8,9 +8,27 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+// function portal_siga_menu() {
+  /*
+   *$items['blog'] = array(
+   *  'title' => 'blogs',
+   *  'page callback' => 'blog_page',
+   *  'access arguments' => array('access content'),
+   *  'type' => MENU_SUGGESTED_ITEM,
+   *);
+   */
+  // $items['administrativo/painel-de-controle'] = array(
+  //   'access callback' => user_access(''),
+  // );
+
+  // return $items;
+// }
+/**
  * Implements hook_form_alter().
  */
-function portal_siga_form_alter(&$form, &$form_state, $form_id) {
+// function portal_siga_form_alter(&$form, &$form_state, $form_id) {
   /*
    *if (isset($form['type']) && $form['type']['#value'] . '_node_settings' == $form_id) {
    *  $form['workflow']['upload_' . $form['type']['#value']] = array(
@@ -21,7 +39,7 @@ function portal_siga_form_alter(&$form, &$form_state, $form_id) {
    * );
    *}
    */
-  if('anuncios_node_form' == $form_id) {
+  // if('anuncios_node_form' == $form_id) {
     // $form['#validate'][] = 'portal_siga_endereco_gmaps';
     // $form[''] = array(
     //   '#type' => '',
@@ -32,23 +50,23 @@ function portal_siga_form_alter(&$form, &$form_state, $form_id) {
     //   '#description' => t(''),
     // );
 
-  }
+  // }
 
-}
+// }
 
-function portal_siga_endereco_gmaps(&$form, &$form_state) {
-  $endereco = $form_state['values']['field_endereco'][LANGUAGE_NONE][0]['value'];
-  $tid = $form_state['values']['field_localizacao'][LANGUAGE_NONE][0]['tid'];
+// function portal_siga_endereco_gmaps(&$form, &$form_state) {
+//   $endereco = $form_state['values']['field_endereco'][LANGUAGE_NONE][0]['value'];
+//   $tid = $form_state['values']['field_localizacao'][LANGUAGE_NONE][0]['tid'];
 
-  $bairro = taxonomy_term_load($tid);
-  $cidade = taxonomy_get_parents($tid);
-  $cidade_tid = array_keys($cidade);
-  $estado = taxonomy_get_parents(reset($cidade_tid));
+//   $bairro = taxonomy_term_load($tid);
+//   $cidade = taxonomy_get_parents($tid);
+//   $cidade_tid = array_keys($cidade);
+//   $estado = taxonomy_get_parents(reset($cidade_tid));
 
-  $bairro = $bairro->name;
-  $cidade = reset($cidade)->name;
-  $estado = reset($estado)->name;
+//   $bairro = $bairro->name;
+//   $cidade = reset($cidade)->name;
+//   $estado = reset($estado)->name;
 
-  $form_state['values']['field_endereco_gmaps'][LANGUAGE_NONE][0]['value'] =
-    $endereco . ' ' . $cidade;
-}
+//   $form_state['values']['field_endereco_gmaps'][LANGUAGE_NONE][0]['value'] =
+//     $endereco . ' ' . $cidade;
+// }

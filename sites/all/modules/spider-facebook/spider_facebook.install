@@ -1,0 +1,352 @@
+<?php
+/**
+ * @file
+ * Spider Facebook module install/schema hooks.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function spider_facebook_schema() {
+  $schema['spider_facebook_login'] = array(
+    'description' => 'The Spider Facebook login.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'user_id' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'username' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'password' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  $schema['spider_facebook_params'] = array(
+    'description' => 'Spider Facebook parameters.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'published' => array(
+        'type' => 'int',
+        'length' => 2,
+        'not null' => TRUE,
+      ),
+      'width' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'url' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'url_type' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'colorsc' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'render' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'code' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'articles' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'backg' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'action' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'send' => array(
+        'type' => 'int',
+        'length' => 2,
+        'not null' => TRUE,
+      ),
+      'face' => array(
+        'type' => 'int',
+        'length' => 2,
+        'not null' => TRUE,
+      ),
+      'layout' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'font' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'lang' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'height' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'post' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'rows' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'domain' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'appid' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'head' => array(
+        'type' => 'int',
+        'length' => 2,
+        'not null' => TRUE,
+      ),
+      'recom' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'target' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'stream' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'size' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'bord' => array(
+        'type' => 'int',
+        'length' => 2,
+        'not null' => TRUE,
+      ),
+      'share_type' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'request_type' => array(
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ),
+      'place' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'twit' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'meta_title' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'meta_type' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'meta_url' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'meta_image' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'meta_site_name' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'meta_description' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'meta_admins' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'css' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'def_img_art' => array(
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => TRUE,
+      ),
+      'fb_only' => array(
+        'type' => 'int',
+        'length' => 2,
+        'not null' => TRUE,
+      ),
+      'reg_type' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'reg_red' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'log_red' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'url_value' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'lang_type' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'req_m' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'count_mode' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'hor_place' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function spider_facebook_install() {
+}
+
+/**
+ * Implements hook_enable().
+ */
+function spider_facebook_enable() {
+  if (!is_dir ('public://spider_facebook')) {
+    drupal_mkdir('public://spider_facebook');
+  }
+}
+
+/**
+ * Implements hook_disable().
+ */
+function spider_facebook_disable() {
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function spider_facebook_uninstall() {
+  function delfiles($del_file) {
+    if (is_dir($del_file)) {
+      $del_folder = scandir($del_file);
+      foreach ($del_folder as $file) {
+        if ($file != '.' and $file != '..') {
+          delfiles($del_file . '/' . $file);
+        }
+      }
+      rmdir($del_file);
+    }
+    else {
+      unlink($del_file);
+    }
+  }
+  if (is_dir ('public://spider_facebook')) {
+    delfiles('public://spider_facebook');
+  }
+  variable_del('spider_facebook_search_by_title');
+  variable_del('spider_facebook_search_posts_name');
+  variable_del('spider_facebook_search_posts_type');
+  variable_del('spider_facebook_post_count');
+  variable_del('spider_facebook_search_pages_name');
+  variable_del('spider_facebook_page_count');
+  drupal_uninstall_schema('spider_facebook');
+  db_query("DELETE FROM {node} WHERE type=:type", array(':type' => 'spider_facebook'));
+  db_query("DELETE FROM {block} WHERE module=:module", array(':module' => 'spider_facebook'));
+}

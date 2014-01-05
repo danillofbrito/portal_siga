@@ -566,6 +566,7 @@ function _token_module($type, $name) {
  * uasort() callback to sort tokens by the 'name' property.
  */
 function token_asort_tokens($token_a, $token_b) {
+  // print '<pre>'; var_dump(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS)); die;
   return strnatcmp($token_a['name'], $token_b['name']);
 }
 
