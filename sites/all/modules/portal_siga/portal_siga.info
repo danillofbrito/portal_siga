@@ -5,3 +5,5 @@ core = 7.x
 project = "porta_siga"
 
 scripts[] = js/functions.js
+
+dependencies[] = siga_sorocaba_config

@@ -909,6 +909,10 @@ ul.links.inline {
   padding-right: 20px;
 }
 
+.latest-news .view-footer {
+  text-align: right;
+}
+
 /*  Quick Tab
 ------------------------------*/
 .block-quicktabs {
@@ -1267,7 +1271,7 @@ ul.quicktabs-tabs li.first {
 }
 
 .region-content-bottom #block-block-4 {
-  /*width: 390;*/
+  /*g*/
 }
 
 .trailer-link a {
@@ -1374,7 +1378,7 @@ body.front .region-content {
   width: 315px;
   border-radius: 10px;
   float: left;
-  background-color: #c63942;
+  background-color: #d89308;
   color: #fff !important;
   padding: 10px;
   height: auto;
@@ -1506,4 +1510,51 @@ body.front .region-content {
 
 .block-fb-likebox {
   float: left;
+}
+
+#quicktabs-tabpage-front_right-1 {
+  font-weight: bold;
+  font-size: larger;
+  padding: 15px;
+  height: 255px;
+}
+
+#quicktabs-tabpage-front_right-0 {
+  height: 285px;
+}
+
+body.node-type-noticias .field-name-field-titulo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+body.node-type-noticias .field-name-field-ti {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+body.node-type-noticias .field-name-field-creditos,
+body.node-type-noticias .field-name-field-creditos-da-foto {
+  font-style: italic;
+}
+
+body.page-taxonomy-term .node-teaser {
+  border-bottom: 2px solid #666;
+  padding-bottom: 15px;
+  margin: 10px 0;
+  position: relative;
+}
+
+body.page-taxonomy-term .node-teaser .read-more {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+body.page-taxonomy-term .node-teaser:last-child {
+  border-bottom: none;
+}
+
+body.page-noticias ul.accordion li {
+  list-style-type: none;
 }
