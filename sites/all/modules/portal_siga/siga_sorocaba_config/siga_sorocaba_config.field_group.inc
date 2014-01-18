@@ -97,7 +97,7 @@ function siga_sorocaba_config_field_group_info() {
     'format_settings' => array(
       'label' => 'Contato',
       'instance_settings' => array(
-        'classes' => 'cufon',
+        'classes' => '',
         'description' => '',
         'show_label' => '1',
         'label_element' => 'h3',

@@ -581,7 +581,7 @@ function siga_sorocaba_config_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'file_directory' => '',
+      'file_directory' => 'anuncios',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -1134,6 +1134,51 @@ function siga_sorocaba_config_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-coluna-body'
+  $field_instances['node-coluna-body'] = array(
+    'bundle' => 'coluna',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_summary_or_trimmed',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Corpo',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 1,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-filmes_em_cartaz-field_cartaz'
   $field_instances['node-filmes_em_cartaz-field_cartaz'] = array(
     'bundle' => 'filmes_em_cartaz',
@@ -1164,7 +1209,7 @@ function siga_sorocaba_config_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'default_image' => 0,
-      'file_directory' => '',
+      'file_directory' => 'filmes',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -1492,7 +1537,7 @@ function siga_sorocaba_config_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'file_directory' => '',
+      'file_directory' => 'noticias',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
@@ -1949,6 +1994,7 @@ function siga_sorocaba_config_field_default_field_instances() {
   t('Cartaz');
   t('Categoria');
   t('Contato');
+  t('Corpo');
   t('Créditos');
   t('Créditos da foto');
   t('Data');

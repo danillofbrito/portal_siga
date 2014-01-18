@@ -90,8 +90,8 @@ function siga_sorocaba_config_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 460,
-          'height' => 115,
+          'width' => 432,
+          'height' => 100,
         ),
         'weight' => 1,
       ),
@@ -259,6 +259,14 @@ function siga_sorocaba_config_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'coluna' => array(
+      'name' => t('Coluna'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Titulo'),
       'help' => '',
     ),
     'filmes_em_cartaz' => array(

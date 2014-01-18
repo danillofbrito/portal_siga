@@ -12,6 +12,39 @@ function siga_sorocaba_config_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-banner_reduzido'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'machine_name' => 'banner_reduzido',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'peak' => array(
+        'region' => 'content_bottom',
+        'status' => 1,
+        'theme' => 'peak',
+        'weight' => -12,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
   $export['fb_likebox-0'] = array(
     'cache' => -1,
     'css_class' => '',
@@ -32,7 +65,7 @@ function siga_sorocaba_config_default_fe_block_settings() {
         'region' => 'content_bottom',
         'status' => 1,
         'theme' => 'peak',
-        'weight' => 0,
+        'weight' => -14,
       ),
       'seven' => array(
         'region' => '',
@@ -230,7 +263,7 @@ function siga_sorocaba_config_default_fe_block_settings() {
         'region' => 'content_bottom',
         'status' => 1,
         'theme' => 'peak',
-        'weight' => -2,
+        'weight' => -18,
       ),
       'seven' => array(
         'region' => '',
@@ -562,7 +595,7 @@ function siga_sorocaba_config_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'peak',
-        'weight' => -10,
+        'weight' => -12,
       ),
       'seven' => array(
         'region' => '',
@@ -625,10 +658,10 @@ function siga_sorocaba_config_default_fe_block_settings() {
         'weight' => 0,
       ),
       'peak' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_first',
+        'status' => 1,
         'theme' => 'peak',
-        'weight' => 0,
+        'weight' => -19,
       ),
       'seven' => array(
         'region' => '',
@@ -859,7 +892,106 @@ function siga_sorocaba_config_default_fe_block_settings() {
         'region' => 'sidebar_first',
         'status' => 1,
         'theme' => 'peak',
-        'weight' => -12,
+        'weight' => -14,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-coluna-block_1'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'coluna-block_1',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'peak' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'peak',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-coluna-block_2'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'coluna-block_2',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'peak' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'peak',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['views-coluna-block_3'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'coluna-block_3',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'peak' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'peak',
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
