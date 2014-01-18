@@ -1,0 +1,16 @@
+name = Spider Facebook
+description = "Spider Facebook module is a Drupal Facebook integration tool, which contains all the available Facebook social plugins and widgets for your website."
+core = 7.x
+dependencies[] = block
+package = Spider Facebook
+configure = admin/settings/spider_facebook
+
+files[] = views/spider_facebook_handler_field_player_view.inc
+files[] = views/spider_facebook.views.inc
+
+; Information added by drupal.org packaging script on 2013-08-20
+version = "7.x-1.0"
+core = "7.x"
+project = "spider-facebook"
+datestamp = "1377010931"
+

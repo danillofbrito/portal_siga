@@ -1,0 +1,369 @@
+<?php
+/**
+ * @file
+ * Spider Facebook module for Drupal 7.
+ *
+ * Written by Webdorado team.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function spider_facebook_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#spider_facebook":
+      $output = '';
+      $output .= '<h3>' . t('Spider Facebook module help.') . '</h3>';
+      $output .= t("Download 'jscolor' library from !url_jscolor and extract it to <b>'sites/all/libraries/jscolor'</b> directory.<br /><br />
+                    To show HTML editor download 'tinymce' library from !url_html_tiny and extract it to <b>'sites/all/libraries/tinymce'</b> directory.<br /><br />", array(
+                      '!url_jscolor' => l(t('here'), 'http://jscolor.com/release/jscolor-1.4.0.zip'),
+                      '!url_html_tiny' => l(t('here'), 'http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip'),
+                      ));
+      $output .= '<p>' . t("
+      <h4><strong>Step 1: <a href='http://web-dorado.com/drupal-facebook-guide/step-2-1.html'>Adding Facebook social plugins to the website.</a></strong></h4>
+      <p>
+        <strong>1.1 </strong>Select <strong>Spider Facebook</strong> from the navigation bar and click on <strong>New</strong>.
+        You can add Like Button, Send Button, Comments Box, Like Box, Follow Button, Request Dialog, Recommendations Box, Activity Feed, Facepile, Share Button, Login Button, Register button and Twitter/Google+/LinkedIn/Facebook Widgets
+      </p>
+      <div style='text-align:right;'><a href='http://web-dorado.com/drupal-facebook-guide/step-2-1.html'>More</a></div>
+      <h4><strong>Step 2: <a href='http://web-dorado.com/drupal-facebook-guide-step-3.html'>Creating a Facebook Application ID.</a></strong></h4>
+      <p>
+        <strong>2.1 </strong>Go to the <a href='https://developers.facebook.com/apps'>Facebook Developers Apps page</a>, and sign in with your Facebook username and password. If you are new to Facebook Developers, you will see a 'Register a Developer Account' button. Follow the steps to create a free developer account on Facebook.
+      </p>
+      <p>
+        <strong>2.2 </strong>Click the register button. Once you've read the Facebook Platform Policies, click on the 'Continue' button. Clicking the 'Continue' button implies that you agree to the Facebook Platform Policies.
+      </p>
+      <p>
+        <strong>2.3 </strong>If your Facebook account is unverified, you may be asked to verify your account (by mobile or credit card number).
+      </p>
+      <p>
+        <strong>2.4 </strong>You might also need to pass a Captcha security check. Click on the 'Submit' button after providing the Captcha code.
+      </p>
+      <p>
+        <strong>2.5 </strong>After signing in, click on the 'Create New App' button.
+      </p>
+      <p>
+        <strong>2.6 </strong>Specify a name for the application in the 'App Name' field. It is recommended to use your site name. Leave the remaining fields blank.
+      </p>
+      <p>
+        <strong>2.7 </strong>You should now be on the Basic (Basic Settings) page for your app, where the App Name you had provided in Step 6 is displayed in the 'Display Name' field. Check if the name and the contact email address are correct. Now, proceed to the 'App Domains' field.
+      </p>
+      <p>
+        <strong>2.8 </strong>Type in your domain name in the 'App Domains' field (e.g. example.com, without 'www' or 'http://').
+      </p>
+      <p>
+        <strong>2.9 </strong>Next, scroll down to the 'Select how your app integrates with Facebook' section of the Basic page, and click 'Website with Facebook Login.' This section will expand to show a 'Site URL' field.
+      </p>
+      <p>
+        <strong>2.10 </strong>Enter your site URL in the 'Site URL' field.
+      </p>
+      <p>
+        <strong>2.11 </strong>Click on the 'Save Changes' button.
+      </p>
+      <p>
+        <strong>2.12 </strong>Copy your Facebook App ID. To find the App ID, from the navigation menu on the left hand of the page click 'Settings' and select 'Basic', which will take you to the Basic Settings page. Your Facebook App ID will appear beside the 'App ID' field, located on the top of the page. Paste the App ID into App ID field of the Spider Facebook's admin page.
+      </p>
+      <div style='text-align:right;'><a href='http://web-dorado.com/drupal-facebook-guide-step-3.html'>More</a></div>
+      <h4><strong>Step 3: <a href='http://web-dorado.com/drupal-facebook-guide-step-4.html'>Publishing Spider Facebook</a></strong></h4>
+      <p>
+        When you add Facebook social plugin, it automatically creates a block in content of your choice. Using Blocks Menu you can edit and configure block settings (Region, Visibility settings etc.)
+      </p>
+      <div style='text-align:right;'><a href='http://web-dorado.com/drupal-facebook-guide-step-4.html'>More</a></div>") . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function spider_facebook_permission() {
+  return array(
+    'access Spider Facebook administration' => array(
+      'title' => t('Administer Spider Facebook module.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function spider_facebook_menu() {
+  $items = array();
+  $items['admin/settings/spider_facebook'] = array(
+    'title' => 'Spider Facebook',
+    'description' => 'Manage Spider Facebook module.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('spider_facebook_configure'),
+    'access arguments' => array('access Spider Facebook administration'),
+    'file' => 'includes/spider_facebook_configure.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['admin/settings/spider_facebook/copy'] = array(
+    'page callback' => 'spider_facebook_copy',
+    'access arguments' => array('access Spider Facebook administration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/spider_facebook_configure.inc',
+  );
+  $items['admin/settings/spider_facebook/publish'] = array(
+    'page callback' => 'spider_facebook_publish',
+    'access arguments' => array('access Spider Facebook administration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/spider_facebook_configure.inc',
+  );
+  $items['admin/settings/spider_facebook/unpublish'] = array(
+    'page callback' => 'spider_facebook_unpublish',
+    'access arguments' => array('access Spider Facebook administration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/spider_facebook_configure.inc',
+  );
+  $items['admin/settings/spider_facebook/delete'] = array(
+    'page callback' => 'spider_facebook_delete',
+    'access arguments' => array('access Spider Facebook administration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/spider_facebook_configure.inc',
+  );
+  $items['admin/settings/spider_facebook/edit'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('spider_facebook_edit'),
+    'access arguments' => array('access Spider Facebook administration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/spider_facebook_configure.inc',
+  );
+  // Image uploader.
+  $items['admin/settings/spider_facebook/image_upload'] = array(
+    'page callback' => 'spider_facebook_image_upload',
+    'access arguments' => array('access Spider Facebook administration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/spider_facebook_image_upload.inc',
+  );
+  // Add post.
+  $items['admin/settings/spider_facebook/add_post'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('spider_facebook_add_post'),
+    'access arguments' => array('access Spider Facebook administration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/spider_facebook_add_post.inc',
+  );
+  // Add page.
+  $items['admin/settings/spider_facebook/add_page'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('spider_facebook_add_page'),
+    'access arguments' => array('access Spider Facebook administration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/spider_facebook_add_page.inc',
+  );
+  // Registration.
+  $items['get_registration_for_faceebok_page_or_post'] = array(
+    'page callback' => 'spider_facebook_block_show',
+    'page arguments' => array(0),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/spider_facebook_block_view.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function spider_facebook_block_info() {
+  $spider_facebook_blocks = db_query("SELECT id FROM {spider_facebook_params} WHERE published=1 ORDER BY title")->fetchCol();
+  $blocks = array();
+  if ($spider_facebook_blocks != NULL) {
+    foreach ($spider_facebook_blocks as $id) {
+      $row = db_query("SELECT * FROM {spider_facebook_params} WHERE id=:id", array(':id' => $id))->fetchObject();
+      if ($row->place == 'top') {
+        $weight = -50;
+      }
+      else {
+        $weight = 50;
+      }
+      if ($row->articles == '' || $row->articles == ',') {
+        $blocks['spider_facebook' . $id] = array(
+          'info' => 'Spider Facebook ' . $row->title,
+          'status' => FALSE,
+        );
+      }
+      elseif ($row->articles == 'all') {
+        $blocks['spider_facebook' . $id] = array(
+          'info' => 'Spider Facebook ' . $row->title,
+          'weight' => $weight,
+          'status' => TRUE,
+          'region' => 'content',
+          'visibility' => BLOCK_VISIBILITY_NOTLISTED,
+          'pages' => '',
+        );
+      }
+      else {
+        $nodeids = explode(',', $row->articles);
+        $pages = '';
+        foreach ($nodeids as $nodeid) {
+          if ($nodeid != '' && $nodeid != ',') {
+            $pages .= 'node/' . $nodeid . '
+';
+          }
+        }
+        $blocks['spider_facebook' . $id] = array(
+          'info' => 'Spider Facebook ' . $row->title,
+          'weight' => $weight,
+          'status' => TRUE,
+          'region' => 'content',
+          'visibility' => BLOCK_VISIBILITY_LISTED,
+          'pages' => $pages,
+        );
+      }
+    }
+  }
+  return $blocks;
+}
+/*
+function spider_facebook_block_info_alter(&$blocks, $theme, $code_blocks) {
+  // if (($form_state['values']['op'] == $form_state['values']['save']) && isset($form_state)) {
+  $spider_facebook_blocks = db_query("SELECT id FROM {spider_facebook_params} WHERE published=1 ORDER BY title")->fetchCol();
+  if ($spider_facebook_blocks != NULL) {
+    foreach ($spider_facebook_blocks as $id) {
+      $row = db_query("SELECT * FROM {spider_facebook_params} WHERE id=:id", array(':id' => $id))->fetchObject();
+      if ($row->place == 'top') {
+        $weight = -50;
+      }
+      else {
+        $weight = 50;
+      }
+      if ($row->articles == '' || $row->articles == ',') {
+        $blocks['spider_facebook']['spider_facebook' . $id]['info'] = 'Spider Facebook ' . $row->title;
+        $blocks['spider_facebook']['spider_facebook' . $id]['status'] = FALSE;
+      }
+      elseif ($row->articles == 'all') {
+        $blocks['spider_facebook']['spider_facebook' . $id]['info'] = 'Spider Facebook ' . $row->title;
+        $blocks['spider_facebook']['spider_facebook' . $id]['weight'] = $weight;
+        $blocks['spider_facebook']['spider_facebook' . $id]['region'] = 'content';
+        $blocks['spider_facebook']['spider_facebook' . $id]['status'] = TRUE;
+        $blocks['spider_facebook']['spider_facebook' . $id]['visibility'] = BLOCK_VISIBILITY_NOTLISTED;
+        $blocks['spider_facebook']['spider_facebook' . $id]['pages'] = '';
+      }
+      else {
+        $nodeids = explode(',', $row->articles);
+        $pages = '';
+        foreach ($nodeids as $nodeid) {
+          if ($nodeid != '' && $nodeid != ',') {
+            $pages .= 'node/' . $nodeid . '
+';
+          }
+        }
+        $blocks['spider_facebook']['spider_facebook' . $id]['info'] = 'Spider Facebook ' . $row->title;
+        $blocks['spider_facebook']['spider_facebook' . $id]['weight'] = $weight;
+        $blocks['spider_facebook']['spider_facebook' . $id]['region'] = 'content';
+        $blocks['spider_facebook']['spider_facebook' . $id]['status'] = TRUE;
+        $blocks['spider_facebook']['spider_facebook' . $id]['visibility'] = BLOCK_VISIBILITY_LISTED;
+        $blocks['spider_facebook']['spider_facebook' . $id]['pages'] = $pages;
+      }
+    }
+  }
+  return $blocks;
+}*/
+
+/**
+ * Implements hook_block_view().
+ */
+function spider_facebook_block_view($delta) {
+  // $spider_facebook_block_count = db_query("SELECT block_number FROM {spider_facebook_block_number_table} WHERE id=:id", array(':id' => 1))->fetchField();
+  // $spider_facebook_block_count = db_query("SELECT COUNT(*) FROM {spider_facebook_params}")->fetchField();
+  require_once "includes/spider_facebook_block_view.inc";
+  $spider_facebook_blocks = db_query("SELECT id,title FROM {spider_facebook_params} ORDER BY title")->fetchAllKeyed();
+  $blocks = array();
+  if ($spider_facebook_blocks != NULL) {
+    foreach ($spider_facebook_blocks as $key => $spider_facebook_block) {
+    // for ($i = 0; $i < $spider_facebook_block_count; $i++) {
+      // $selected_item_id = variable_get(('spider_facebook_block_select_item' . $key), -1);
+      $selected_item_id = $key;
+      if ($selected_item_id != -1 && $selected_item_id != 0 && db_query("SELECT id FROM {spider_facebook_params} WHERE published=:published and id=:id", array(':published' => 1, ':id' => $selected_item_id))->fetchField()) {
+        switch ($delta) {
+          case 'spider_facebook' . $key:
+            $blocks['subject'] = '';
+            $blocks['content'] = spider_facebook_block_show($selected_item_id);
+            break;
+        }
+      }
+      else {
+        switch ($delta) {
+          case 'spider_facebook' . $key:
+            $blocks['subject'] = '';
+            $blocks['content'] = '';
+            break;
+        }
+      }
+    }
+  }
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+// function spider_facebook_block_configure($delta) {
+  // $spider_facebook_block_count = db_query("SELECT block_number FROM {spider_facebook_block_number_table} WHERE id=:id", array(':id' => 1))->fetchField();
+  /*$spider_facebook_block_count = db_query("SELECT COUNT(*) FROM {spider_facebook_params}")->fetchField();
+  $spider_facebook_params = db_query("SELECT id,title FROM {spider_facebook_params} ORDER BY title")->fetchAllKeyed();
+  for ($i = 0; $i < $spider_facebook_block_count; $i++) {
+    if ($delta == 'spider_facebook' . $i) {
+      $form['spider_facebook_block_select_item' . $i] = array(
+        '#type' => 'select',
+        '#title' => t('Select item'),
+        '#description' => t('Select item, which you want to see in this block.'),
+        '#default_value' => variable_get(('spider_facebook_block_select_item' . $i), 0),
+        '#required' => FALSE,
+        '#options' => $spider_facebook_params,
+      );
+    }
+  }
+  return $form;*/
+// }
+
+/**
+ * Implements hook_block_save().
+ */
+// function spider_facebook_block_save($delta, $edit = array()) {
+  // $spider_facebook_block_count = db_query("SELECT block_number FROM {spider_facebook_block_number_table} WHERE id=:id", array(':id' => 1))->fetchField();
+  // $spider_facebook_block_count = db_query("SELECT COUNT(*) FROM {spider_facebook_params}")->fetchField();
+  /*$spider_facebook_blocks = db_query("SELECT id,title FROM {spider_facebook_params} ORDER BY title")->fetchAllKeyed();
+  foreach ($spider_facebook_blocks as $key => $spider_facebook_block) {
+  // for ($i = 0; $i < $spider_facebook_block_count; $i++) {
+    if ($delta == 'spider_facebook' . $key) {
+      variable_set('spider_facebook_block_select_item' . $key, $edit['spider_facebook_block_select_item' . $key]);
+    }
+  }
+  return;*/
+// }
+
+/**
+ * Implements hook_views_api().
+ */
+function spider_facebook_views_api() {
+  return array(
+    'api' => 2.0,
+    'path' => drupal_get_path('module', 'spider_facebook') . '/views',
+  );
+}
+
+/**
+ * Implements hook_library().
+ */
+function spider_facebook_library() {
+  $libraries = array(
+    'jscolor' => array(
+      'version' => '1.3.9',
+      'js' => array('sites/all/libraries/jscolor/jscolor.js' => array(
+        'group' => JS_LIBRARY,
+        ),
+      ),
+    ),
+  );
+  return $libraries;
+}
+
+/**
+ * Implements hook_init().
+ */
+function spider_facebook_init() {
+  drupal_add_css(drupal_get_path('module', 'spider_facebook') . '/css/spider_facebook_fieldset.css');
+}

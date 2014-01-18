@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the features_peak feature.
+ */
+
+include_once 'features_peak.features.inc';
