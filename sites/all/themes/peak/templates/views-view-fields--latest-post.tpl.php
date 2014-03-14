@@ -24,7 +24,9 @@
 <div class="content">
   <div class="content-inner">
     <?php print $fields['field_foto']->content; ?>
-    <?php print $fields['body']->content; ?>
+    <div class="noticia-body">
+      <?php print $fields['body']->content; ?>
+      <div class="read-more"><?php print $fields['view_node']->content; ?></div>
+    </div>
   </div>
-  <div class="read-more"><?php print $fields['view_node']->content; ?></div>
 </div>

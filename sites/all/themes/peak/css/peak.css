@@ -903,11 +903,16 @@ ul.links.inline {
   float: left;
   width: 120px;
   height: 60px;
-  margin: 5px 10px 10px 0;
+  margin: 10px 10px 10px 0;
+}
+
+.latest-news .noticia-body {
+  width: 630px;
+  float: left;
 }
 
 .latest-news .read-more {
-  text-align: right;
+  text-align: left;
   padding-right: 20px;
 }
 
@@ -1471,6 +1476,10 @@ body.front .region-content {
   padding-bottom: 15px;
 }
 
+.colunista.even {
+  background-color: #dbdbdb;
+}
+
 .foto-colunista {
   float: left;
 }
@@ -1481,6 +1490,15 @@ body.front .region-content {
   padding: 0 15px;
   color: rgb(128, 128, 128);
   line-height: 1.7;
+}
+
+.dados-colunista span {
+  font-size:smaller;
+}
+
+.dados-colunista span:first-child {
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .dados-colunista p {
@@ -1535,9 +1553,13 @@ body.front .region-content {
 
 #quicktabs-tabpage-front_right-1 {
   font-weight: bold;
-  font-size: larger;
+  font-size: 13px;
   padding: 15px;
   height: 255px;
+}
+
+#quicktabs-tabpage-front_right-1 p {
+  margin: 0;
 }
 
 #quicktabs-tabpage-front_right-0 {
@@ -1588,5 +1610,9 @@ body.page-anuncios-cupons .view-content span.field-content.cufon {
 body.page-anuncios-cupons .view-content li {
   list-style-type: none;
   float: left;
+}
+
+form#search-block-form input {
+  background-color: #DDD;
 }
 
